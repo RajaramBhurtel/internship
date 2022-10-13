@@ -1,0 +1,22 @@
+*{
+	margin: 10px;
+	background-color: beige;
+}
+
+#login_header{
+	text-align: center;
+}
+div
+{	
+    width:50%;
+    float: left;
+}
+
+.cls1{
+	position: absolute;
+  	right: 0;
+
+}
+.cls2{
+	position: relative;
+}
