@@ -12,7 +12,10 @@
 
 		if( null != $result ){
 			$_SESSION[ 'user' ] = $result [ 0 ][ 'Username' ] ;
-			header( "location:/office/home" );
+			echo "<script>alert('Successfully logged in.'); location.href='?action=home'; </script>";
+		}
+		else{
+			echo "<script>alert('Log in failed.'); location.href='?action='; </script>";
 		}
 	}
 
@@ -30,7 +33,7 @@
 		) );
 
 		if ( null != $result ) {
-			echo "Registration success. Proceed to login.";
+			echo "<script>alert('Successfully Registered! Proceed to login.'); location.href='?action=login'; </script>";
 			
 		}	
 	}
@@ -38,7 +41,7 @@
 	if (isset( $_POST[ 'logout' ] ) ) {
 		session_destroy();
     	unset($_SESSION[ ' user ' ]);
-    	header( 'location:/office/' );
+    	header( 'location:?action=index' );
 	}
 
- ?>
+?>

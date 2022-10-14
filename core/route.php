@@ -1,23 +1,33 @@
 <?php 
-	$request =  $_SERVER['REQUEST_URI'];
-	echo $request;
-	
-		switch ( $request ) {
-			case 'office':
-			case '/office/':
-				require __DIR__ . '/index.php';
+	 // var_dump( $_GET ); 
+
+	  if ( isset( $_GET [ 'action' ] )) {
+	 	$action = $_GET[ 'action' ];
+
+		switch ( $action ){
+			case '' 	 :
+			case 'index' :
+				include 'view/index.php';
 				break;
 
-			case 'office/login':
-				require __DIR__. '/view/login.php';
-				break;
-
-			case 'office/home':
-				require __DIR__.'/view/home.php';
-				break;
-
+			case $action :
+				if( file_exists( 'view/'.$action.'.php')){
+					include 'view/'.$action.'.php';
+					break;
+				}
+				else{
+					goto error;
+					break;
+				}
+				
 			default:
-				require __DIR__. '/view/default.php';
-				break;
+				error:
+					include 'view/error.php';
+					break;
 		}
+	}else{
+	 	include 'view/index.php';
+	 }
+
+
 ?>

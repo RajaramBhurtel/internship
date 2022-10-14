@@ -1,7 +1,8 @@
 <?php 
-	$request =  $_SERVER['REQUEST_URI'];
-	 
-	
+
+
+	$request =  $_SERVER[ 'REQUEST_URI' ];
+
 		switch ( $request ) {
 			case '/office/':
 				require __DIR__ . '/view/login.php';
@@ -17,7 +18,7 @@
 				break;
 
 			default:
-				require __DIR__. '/view/error.php';
+				require __DIR__. '/view/login.php';
 				break;
 		}
 ?>
