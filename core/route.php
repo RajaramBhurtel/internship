@@ -1,9 +1,8 @@
 <?php 
 	 // var_dump( $_GET ); 
 
-	  if ( isset( $_GET [ 'action' ] )) {
-	 	$action = $_GET[ 'action' ];
-
+	if ( isset( $_GET [ 'action' ] )) {
+		$action = $_GET[ 'action' ];
 		switch ( $action ){
 			case '' 	 :
 			case 'index' :

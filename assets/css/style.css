@@ -11,6 +11,10 @@ div
    margin: 10px;
 
 }
+#more {
+	display: none;
+}
+
 #homebd{
 	margin-top: 5%;
 }
@@ -82,12 +86,12 @@ margin:50px auto
     text-align: center;
     margin: 0 auto;
     line-height: 1.7;
-
 }
 
 #btnlm{
 
 }
+
 
 
 

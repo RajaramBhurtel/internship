@@ -44,4 +44,22 @@
     	header( 'location:?action=index' );
 	}
 
+	if (isset ( $_POST['update'])) {
+		$username   = $_POST[ 'username' ];
+		$lastname	= $_POST[ 'lastname' ];
+		$email		= $_POST[ 'email'];
+		$id 	= $_POST[ 'id' ];
+
+		$result 	= $user-> update( array(
+		"Username"  => $username,
+		"Lastname"	=> $lastname,
+		"Email" 	=> $email
+		), $id );
+
+		header( 'location:?action=users' );
+	}
+	if( isset ( $_GET[ 'delid' ] ) ){
+    $user -> delete( $_GET[ 'delid' ] );
+  }
+
 ?>
