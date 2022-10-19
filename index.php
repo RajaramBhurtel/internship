@@ -3,6 +3,8 @@
 	include 'helpers/get_array.php';
 	cleanArr( $_POST );	
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +24,7 @@
 	<?php
 		include "controller/user_controller.php";
 		include "controller/session_controller.php";
-		
+
 		if( isLoggedIn() )	{
 			include 'view/navbar.php';
 		}
