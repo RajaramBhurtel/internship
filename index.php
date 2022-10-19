@@ -1,5 +1,6 @@
 <?php 
 	include 'helpers/clean.php';
+	include 'helpers/get_array.php';
 	cleanArr( $_POST );	
 
 ?>
@@ -15,16 +16,21 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 	<!-- <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script> -->
 	<script src="https://kit.fontawesome.com/ab5aaeba7c.js" crossorigin="anonymous"></script>
-	<title>Login </title>
+	<title>Internship </title>
 </head>
 <body>
 	<?php
-		if( 'login' != $_GET['action'] && 'signup' != $_GET['action']  ){
-			include 'view/navbar.php';	
+		include "controller/user_controller.php";
+		include "controller/session_controller.php";
+		
+		if( isLoggedIn() )	{
+			include 'view/navbar.php';
 		}
 
 		include 'core/route.php';
-		include 'view/footer.php';	
+		include 'view/footer.php';
+		// print_r($_POST);
+		// get_array($_POST);
 	?>
 
 </body>

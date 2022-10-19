@@ -1,10 +1,11 @@
 <?php 
-	// include "controller/functions.php";
-	if ( ! isset( $_SESSION[ 'user' ] ) ){
+	if ( ! isLoggedIn() ){
 		header( 'location:?action=login' );
 	}
-?>
- <?php  include "view/header.php"; ?>
+ 	
+ 	if (! isAdmin() ){
+ 		include "view/header.php"; 
+ ?>
 
 <div class="container-fluid text-center" id="homebd">
 	<h1>Changing the World Through Our Services</h1>
@@ -14,13 +15,24 @@
 		<a href="#" class="btn btn-large btn-info" id="btnlm"  onclick="myFunction()" > Read More </a>
 	</div>
 </div>
+
+<?php }else{ ?>
+	<div class="container text-center ">
+		<h3>Welcome to admin dashboard</h3>
+	</div>
+	<div class="row">
+		<div class="col">
+			<p class="text-center">You can manage website from here.</p>
+		</div>
+	</div>
+<?php } ?>
 <script type="text/javascript">
 	function myFunction() {
-	  var dots = document.getElementById("dots");
-	  var moreText = document.getElementById("more");
-	  var btnText = document.getElementById("btnlm");
+	  var dots = document.getElementById( "dots" );
+	  var moreText = document.getElementById( "more" );
+	  var btnText = document.getElementById( "btnlm" );
 
-	  if (dots.style.display === "none") {
+	  if ( dots.style.display === "none" ) {
 	    dots.style.display = "inline";
 	    btnText.innerHTML = "Read more";
 	    moreText.style.display = "none";

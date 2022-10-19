@@ -1,4 +1,3 @@
-<?php include "controller/functions.php"; ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark text-light">
   <div class="container-fluid ">
@@ -9,8 +8,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
          <?php 
-         if(isset ($_SESSION['user'])){
-          if ( 'admin' != $_SESSION['user']) {?>
+         if( ! isAdmin()){
+         ?>
 
         <li class="nav-item">
           <a class="nav-link active text-light" aria-current="page" href="?action=">Home</a>
@@ -36,31 +35,18 @@
             <li class='nav-item '>
               <a class='nav-link text-light' href='?action=users'>Users</a>
             </li>
-        <?php }} ?>
+        <?php } ?>
       </ul>
         
       <?php 
-        if (! isset( $_SESSION[ 'user' ] )) {
-         echo "
-              <ul class='navbar-nav'>
-              <li class='nav-item ' >
-                <a class='nav-link text-light' aria-current='page' href='?action=login'>Login</a>
-              </li> 
-              <li class='nav-item ' >
-                <a class='nav-link text-light' aria-current='page' href='?action=signup'>Signup</a>
-              </li> 
-            </ul>
-         ";
-        }else{
-          echo "". 
-            ( $_SESSION ['user'])." &nbsp
-            
+        if ( isLoggedIn() ) {
+            echo "".( $_SESSION ['user'])." &nbsp
             <form action='' method='POST'> 
                 <button type='submit' name='logout' class='btn btn-danger'>Logout</button>
             </form>
           ";
         }
-       ?>
+      ?>
     </div>
   </div>
 </nav>

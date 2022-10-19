@@ -1,7 +1,5 @@
 <?php
-
-	include "controller/functions.php";
-	if ( isset( $_SESSION[ 'user' ] ) ){
+	if ( isLoggedIn() ){
 		header( 'location:?action=home' );
 	}
 

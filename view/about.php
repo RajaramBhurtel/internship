@@ -1,6 +1,8 @@
 <?php 
-	
-?>
+    if ( ! isLoggedIn() ){
+        header( 'location:?action=login' );
+    }
+ ?>
 
 <section>
     <div class = "content">

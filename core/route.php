@@ -6,7 +6,7 @@
 		switch ( $action ){
 			case '' 	 :
 			case 'index' :
-				include 'view/index.php';
+				include 'view/home.php';
 				break;
 
 			case $action :
@@ -25,7 +25,7 @@
 					break;
 		}
 	}else{
-	 	include 'view/index.php';
+	 	include 'view/home.php';
 	 }
 
 
