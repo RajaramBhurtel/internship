@@ -1,7 +1,5 @@
 <?php 
-    if ( ! isLoggedIn() ){
-        header( 'location:?action=login' );
-    }
+
  ?>
 <div class="container">
   <div class="row"></div>
@@ -13,15 +11,16 @@
       <form action="">
         <div class="mb-3">
           <label for="fname" class="form-label">First Name</label>
-          <input type="text" id="fname" class="form-control" name="firstname" placeholder="John">
+          <input type="text" id="fname" class="form-control" name="firstname" placeholder="Sabin">
         </div>
         <div class="mb-3">
           <label for="lname" class="form-label">Last Name</label>
-          <input type="text" id="lname" name="lastname" class="form-control" placeholder="Smith">
+          <input type="text" id="lname" name="lastname" class="form-control" placeholder="Bhurtel">
         </div>
         <div class="mb-3">
           <label for="age" class="form-label">Age</label>
           <select id="age" name="age" class="form-control" style="color: gray">
+            <option value="" style="color: grey;">Select</option>
             <option value="minor" style="color: grey;">Under 18</option>
             <option value="working" style="color: grey;">Between 18 and 60</option>
             <option value="retired" style="color: grey;">Above 60</option>

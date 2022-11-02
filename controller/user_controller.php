@@ -3,7 +3,7 @@
     include 'model/user.php';
     $user = new User();
 
-	if( isset( $_POST[ 'login' ] ) ){
+	if( isset( $_POST[ 'logzin' ] ) ){
 		$data = get_array( $_POST );
 		$result = $user-> get_by( $data );
 

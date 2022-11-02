@@ -1,12 +1,19 @@
 <?php 
-	if ( ! isLoggedIn() ){
-		header( 'location:?action=login' );
-	}
+	// if ( ! isLoggedIn() ){
+	// 	header( 'location:?action=login' );
+	// }
  	
- 	if (! isAdmin() ){
- 		include "view/header.php"; 
+ // 	if (! isAdmin() ){
+ // 		include "view/header.php"; 
  ?>
-
+<header class="bg-secondary py-2">
+	<div class="container px-4 px-lg-5 my-5">
+	    <div class="text-center text-dark">
+	        <h1 class="display-4 fw-bolder">Shop in style</h1>
+	        <p class="lead fw-normal text-dark-50 mb-0">With geat joy </p>
+	    </div>
+	</div>
+</header>
 <div class="container-fluid text-center" id="homebd">
 	<h1>Changing the World Through Our Services</h1>
 	<p class="lead">We All Want To Make A Difference. But Do We?<span id="dots">.....</span><span id="more">Humans of every walk of life have a nagging longing to make a difference in the lives or others, in Truth, to make a difference in the world. But how do we know if we are, or better yet, how do we make that difference? This question is one I am asked repeatedly. The simple answer is, “because you are here.” You might think this too simple an answer for such a thought provoking question.
@@ -16,16 +23,16 @@
 	</div>
 </div>
 
-<?php }else{ ?>
-	<div class="container text-center ">
+
+<!-- 	<div class="container text-center ">
 		<h3>Welcome to admin dashboard</h3>
 	</div>
 	<div class="row">
 		<div class="col">
 			<p class="text-center">You can manage website from here.</p>
 		</div>
-	</div>
-<?php } ?>
+	</div> -->
+
 <script type="text/javascript">
 	function myFunction() {
 	  var dots = document.getElementById( "dots" );

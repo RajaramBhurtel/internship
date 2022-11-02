@@ -1,7 +1,7 @@
 <?php 
-	if( ! isAdmin() ){
-	    header( 'location:?action=home');
-	}
+
+	foreach( $data as $row ){
+
 	
 ?>
 <div class="row m-4 cls2">
@@ -9,11 +9,11 @@
 	<div class="row m-4">
 		<form method="post" action="">
 			<div class="mb-3">
-			    <input type="hidden" class="form-control" name="id" value="<?php echo $row[ 'id' ]; ?>">
+			    <input type="hidden" class="form-control" name="id" value="<?php echo $row[ 'id' ]; ?>" >
 		  </div>
 		  <div class="mb-3">
 		    <label  class="form-label">First Name</label>
-		    <input type="text" class="form-control" name="username" value="<?php echo $row[ 'Username' ]; ?>">
+		    <input type="text" class="form-control" name="username" value="<?php echo $row[ 'Username' ]; ?>" readonly="readonly">
 		  </div>
 		  <div class="mb-3">
 		    <label  class="form-label">Last Name</label>
@@ -29,3 +29,4 @@
 		</form>
 	</div>
 </div>
+<?php } ?>
